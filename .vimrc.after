@@ -1,0 +1,47 @@
+" syntastic customizations.
+let g:syntastic_python_checkers = ['flake8', 'pylint']
+let g:syntastic_ruby_checkers = ['rubocop']
+let g:syntastic_json_checkers = ['jsxhint']
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_cpp_checkers = ['cpplint']
+let g:syntastic_h_checkers = ['cpplint']
+let g:syntastic_python_flake8_post_args='--max-line-length=100'
+
+" clang-format customizations.
+let g:clang_format#detect_style_file = 1
+let g:clang_format#auto_format = 1
+
+" ctrl-p customizations.
+let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:50'
+
+" ycm customizations.
+let g:ycm_always_populate_location_list = 1
+let g:ycm_filepath_completion_use_working_dir = 1
+let g:ycm_open_loclist_on_ycm_diags = 1
+let g:ycm_collect_identifiers_from_tags_files = 0
+let g:ycm_complete_in_comments = 0
+let g:ycm_confirm_extra_conf = 0
+
+set wildignore+=third_party/*,build/*,*.so,*.os,*.o
+
+au BufRead,BufNewFile *.json set filetype=json
+autocmd FileType cpp setlocal shiftwidth=4 tabstop=4
+autocmd FileType h setlocal shiftwidth=4 tabstop=4
+autocmd FileType json,javascript setlocal shiftwidth=4 tabstop=4
+autocmd! FileType gitcommit setlocal textwidth=78 colorcolumn=79
+
+autocmd FileType c,cpp nnoremap <buffer>T :YcmCompleter GetType<CR>
+autocmd FileType c,cpp nnoremap <silent><buffer><F7> :YcmComplete GoTo<CR>
+autocmd FileType c,cpp nnoremap <silent><buffer><F8> :YcmComplete GoToDeclaration<CR>
+autocmd FileType javascript nnoremap <silent><buffer><F8> :TernDef<CR>
+
+set cc=100
+set textwidth=100
+set background=light
+set mouse=a
+set spell
+set spelllang=en_us
+
+color Tomorrow
+
+nmap <F9> :TagbarToggle<CR>
