@@ -1,0 +1,26 @@
+selector:
+  js_test:
+    roots:
+    - jstests/aggregation/*.js
+    - jstests/aggregation/bugs/*.js
+    - src/mongo/db/modules/*/jstests/aggregation/*.js
+  cpp_unit_test:
+    root: build/unittests.txt
+    include_files:
+    - build/**/pipeline/*
+  db_test:
+    include_suites:
+    - documentsource
+
+executor:
+  js_test:
+    config: {}
+    hooks:
+    - class: CleanEveryN
+      n: 20
+    fixture:
+      class: MongoDFixture
+      mongod_options:
+        nopreallocj: ''
+        set_parameters:
+          enableTestCommands: 1
