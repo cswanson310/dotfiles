@@ -39,17 +39,17 @@ MongoDB
 -------
 All files mentioned in this section live in the `mongo` directory.
 
-You'll need to put the file `mongo_shell.js` in the directory
+You'll need to link the file `mongo_shell.js` into the directory
 `~/.janus/tern_for_vim/node_modules/tern/plugin/` in order for tern to
 understand MongoDB's javascript (credit to Mathias for making that
 work).
 
-Put `.ycm_extra_conf.py` (configures code completion), `.eslintrc`
+Link `.ycm_extra_conf.py` (configures code completion), `.eslintrc`
 (configures linting of javascript files), and `.tern-project`
-(configures code navigation)  at the root of your mongo repository.
+(configures code navigation) into the root of your mongo repository.
 
-Put `my_agg.yml` in `buildscripts/resmokeconfig/suites`.
+Link `my_agg.yml` into `buildscripts/resmokeconfig/suites`.
 
-Put `git/info/exclude` in `.git/info/exclude`, or add whichever things
+Link `git/info/exclude` to `.git/info/exclude`, or add whichever things
 in that file seem relevant (most of the files mentioned here at least)
 to your existing `.git/info/exclude`.
