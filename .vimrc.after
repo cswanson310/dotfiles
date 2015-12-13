@@ -42,6 +42,22 @@ set mouse=a
 set spell
 set spelllang=en_us
 
-color Tomorrow
+color Tomorrow-Night-Bright
+" Fiddle with the colors a bit
+" Orange
+hi Function ctermfg=172 guifg=#e78c45
+" Light Blue
+hi cType ctermfg=111 guifg=#7aa6da
+hi Type ctermfg=111 guifg=#7aa6da
+hi StorageClass ctermfg=111 guifg=#7aa6da
+hi Typedef ctermfg=111 guifg=#7aa6da
+hi Include ctermfg=111 guifg=#7aa6da
+" Sea green
+hi Keyword ctermfg=30 guifg=#70c0b1
+hi Operator ctermfg=30 guifg=#70c0b1
+
+" Make spelling errors a little less painful to look at.
+hi! SpellBad ctermbg=NONE cterm=underline
+
 
 nmap <F9> :TagbarToggle<CR>

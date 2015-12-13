@@ -35,6 +35,13 @@ To set up the additional vim plugins, you'll need to clone all
 repositories listed in the 'Other vim plugins' bullet of the
 Dependencies section into the directory `~/.janus`.
 
+Vim Colors
+----------
+I added some custom syntax highlighting to some languages that are of
+interest to me. If you'd like to use these, link everything in the
+vim-syntaxes folder into the `~/.vim/after/syntax/` directory, creating
+it if it doesn't exist.
+
 MongoDB
 -------
 All files mentioned in this section live in the `mongo` directory.
