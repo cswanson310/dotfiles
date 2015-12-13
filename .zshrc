@@ -47,6 +47,8 @@ COMPLETION_WAITING_DOTS="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git git-prompt brew bundler command-not-found jira pip rails)
 
+[[ -s "/etc/grc.zsh" ]] && source /etc/grc.zsh
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration.
@@ -62,8 +64,7 @@ export PATH="/usr/local/bin:$PATH"
 export TERM=xterm-256color
 
 # Get the number of cores.
-if [ -f /proc/cpuinfo ]
-then
+if [ -f /proc/cpuinfo ]; then
   export NUM_CORES=$(grep -c ^processor /proc/cpuinfo)
 else
   export NUM_CORES=$(sysctl -n hw.logicalcpu)
@@ -118,12 +119,19 @@ alias fm="ps -ef | grep mongo"
 alias fmd="ps -ef | grep mongod"
 
 alias cr="python ~/github/kernel-tools/codereview/upload.py --nojira --check-clang-format"
-alias resmoke="python buildscripts/resmoke.py"
 alias evergreen="~/github/evergreen"
+
+# If grc is installed, then use it to colorize the output of resmoke.py.
+type foo >/dev/null 2>&1
+if [[ $? -eq 0 ]]; then
+  alias resmoke="grc -c ~/.grc/conf.resmoke --colour=auto python buildscripts/resmoke.py"
+else
+  alias resmoke="python buildscripts/resmoke.py"
+fi
 
 # On ubuntu systems, there is already a package for 'node', so node.js's 'node' is installed as
 # 'nodejs'.
-which node > /dev/null
+type node > /dev/null 2>&1
 if [[ $? != 0 ]]; then
   alias node="nodejs"
 fi

@@ -1,0 +1,65 @@
+# Colors: none, default, bold, underline, blink, reverse, concealed,
+# black, green, yellow, blue, magenta, cyan, white,
+# on_black, on_green, on_yellow, on_blue, on_magenta, on_cyan, on_white beep
+
+# Jobs
+regexp=^\[.*:job0\].*$
+colours=green
+count=more
+=======
+regexp=^\[ReplicaSetFixture:job0:primary\].*$
+colours=primary
+count=more
+=======
+regexp=^\[ReplicaSetFixture:job0:secondary\].*$
+colours=secondary
+count=more
+=======
+regexp=^\[.*:job1\].*$
+colours=yellow
+count=more
+=======
+regexp=^\[.*:job2\].*$
+colours=blue
+count=more
+=======
+regexp=^\[.*:job3\].*$
+colours=magenta
+count=more
+# Mongods in test logs
+=======
+regexp=^\[js_test:.*\].*d\d{4,5}\|.*$
+colours=d20010
+count=more
+=======
+regexp=^\[js_test:.*\].*c\d{4,5}\|.*$
+colours=secondary
+count=more
+=======
+regexp=^\[js_test:.*\].*s\d{4,5}\|.*$
+colours=primary
+count=more
+=======
+regexp=^\[js_test:.*\].*d20010\|.*$
+colours=d20010
+count=more
+=======
+regexp=^\[js_test:.*\].*d20011\|.*$
+colours=d20011
+count=more
+=======
+regexp=^\[js_test:.*\].*d20012\|.*$
+colours=d20012
+count=more
+=======
+regexp=^\[js_test:.*\].*d20013\|.*$
+colours=d20013
+count=more
+=======
+regexp=^\[js_test:.*\].*d20014\|.*$
+colours=d20014
+count=more
+=======
+regexp=^\[jstest:.*\].*assert: .*$
+colours=blink
+count=more

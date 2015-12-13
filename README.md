@@ -21,6 +21,8 @@ Dependencies
         * vim-clang-format (https://github.com/rhysd/vim-clang-format):
           auto-formats C++ code to ensure I follow the style guide.
 * zsh as the shell, and oh-my-zsh (http://ohmyz.sh)
+* grc (optional) to colorize output from various commands, mostly
+  running tests for MongoDB.
 
 Installation
 ============
@@ -41,6 +43,16 @@ I added some custom syntax highlighting to some languages that are of
 interest to me. If you'd like to use these, link everything in the
 vim-syntaxes folder into the `~/.vim/after/syntax/` directory, creating
 it if it doesn't exist.
+
+GRC
+---
+Optionally, you can use grc to colorize the output of various commands.
+This is mostly useful for the output from MongoDB's test runner,
+resmoke.py
+
+To set up, link `grc/conf.resmoke` to the directory `~/.grc` (You'll
+probably have to create that directory), then link `etc/grc.zsh` to
+`/etc/grc.zsh`.
 
 MongoDB
 -------
