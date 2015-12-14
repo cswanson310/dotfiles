@@ -15,3 +15,9 @@ data/
 .ycm_extra_conf.py
 buildscripts/resmokeconfig/suites/my_agg.yml
 .eslintrc
+jstestfuzz/
+.scons/
+.ackrc
+report.json
+gprof2dot
+gprof2dot.py
