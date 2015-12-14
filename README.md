@@ -64,8 +64,9 @@ understand MongoDB's javascript (credit to Mathias for making that
 work).
 
 Link `.ycm_extra_conf.py` (configures code completion), `.eslintrc`
-(configures linting of javascript files), and `.tern-project`
-(configures code navigation) into the root of your mongo repository.
+(configures linting of javascript files), `.tern-project` (configures
+code navigation), and `.ackrc` (helps for faster searching) into the
+root of your mongo repository.
 
 Link `my_agg.yml` into `buildscripts/resmokeconfig/suites`.
 

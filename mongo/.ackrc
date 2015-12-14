@@ -1,0 +1,4 @@
+--color
+--ignore-dir=src/third_party
+--ignore-dir=build/
+--ignore-dir=docs/
