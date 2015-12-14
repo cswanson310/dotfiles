@@ -28,7 +28,7 @@ au BufRead,BufNewFile *.json set filetype=json
 autocmd FileType cpp setlocal shiftwidth=4 tabstop=4
 autocmd FileType h setlocal shiftwidth=4 tabstop=4
 autocmd FileType json,javascript setlocal shiftwidth=4 tabstop=4
-autocmd! FileType gitcommit setlocal textwidth=78 colorcolumn=79
+autocmd! FileType gitcommit setlocal textwidth=72 colorcolumn=50,72
 
 autocmd FileType c,cpp nnoremap <buffer>T :YcmCompleter GetType<CR>
 autocmd FileType c,cpp nnoremap <silent><buffer><F7> :YcmComplete GoTo<CR>
@@ -41,6 +41,7 @@ set background=light
 set mouse=a
 set spell
 set spelllang=en_us
+set cursorline
 
 color Tomorrow-Night-Bright
 " Fiddle with the colors a bit
@@ -58,6 +59,5 @@ hi Operator ctermfg=30 guifg=#70c0b1
 
 " Make spelling errors a little less painful to look at.
 hi! SpellBad ctermbg=NONE cterm=underline
-
 
 nmap <F9> :TagbarToggle<CR>

@@ -51,6 +51,8 @@ plugins=(git git-prompt brew bundler command-not-found jira pip rails)
 
 source $ZSH/oh-my-zsh.sh
 
+unamestr=$(uname)
+
 # User configuration.
 export PATH="/usr/bin:/bin:/usr/sbin:/sbin"
 
@@ -59,6 +61,12 @@ export JIRA_URL="https://jira.mongodb.org"
 
 # For all things installed via homebrew.
 export PATH="/usr/local/bin:$PATH"
+
+if [[ "$unamestr" == "Linux" ]]; then
+  # For m binaries, which for some reason don't like Ubuntu. TODO: figure out a better way to deal
+  # with this.
+  export PATH="/usr/local/bin/bin:$PATH"
+fi
 
 # Enable more colors in vim.
 export TERM=xterm-256color
@@ -85,7 +93,6 @@ fi
 export CC=$(which clang)
 export CXX=$(which clang++)
 export CMAKE_SYSTEM_LIBRARY_PATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/include
-unamestr=$(uname)
 if [[ "$unamestr" == "Darwin" ]]; then
   # OS X has its own crypto/TLS libraries, so we need some dependencies for linking against openssl.
   if ! [ -e "/usr/local/opt/openssl" ]; then
