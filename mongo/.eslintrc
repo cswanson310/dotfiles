@@ -1,6 +1,31 @@
 globals:
-  assert: true
   db: true
+  ShardingTest: true
+  ReplSetTest: true
+  assert: true
+  tojson: true
+  printjson: true
+  jsTestLog: true
+  jsTest: true
+  MongoRunner: true
+  load: true
+  startParallelShell: true
+  ls: true
+  sleep: true
+  authutil: true
+  run: true
+  getHostName: true
+  getLatestOp: true
+  assertAlways: true
+  assertWhenOwnColl: true
+  assertWhenOwnDB: true
+  listFiles: true
+  NumberInt: true
+  NumberLong: true
+  sh: true
+  Random: true
+  Mongo: true
+  ErrorCodes: true
 rules:
   indent:
     - 2
@@ -14,6 +39,15 @@ rules:
   semi:
     - 2
     - always
+  comma-dangle:
+    - 0
+  indent:
+    - 0
+  max-len:
+    - 2
+    - 100
+    - 4
 env:
   es6: true
   browser: true
+extends: 'eslint:recommended'
