@@ -129,7 +129,7 @@ alias cr="python ~/github/kernel-tools/codereview/upload.py --nojira --check-cla
 alias evergreen="~/github/evergreen"
 
 # If grc is installed, then use it to colorize the output of resmoke.py.
-type foo >/dev/null 2>&1
+type grc >/dev/null 2>&1
 if [[ $? -eq 0 ]]; then
   alias resmoke="grc -c ~/.grc/conf.resmoke --colour=auto python buildscripts/resmoke.py"
 else
@@ -140,5 +140,5 @@ fi
 # 'nodejs'.
 type node > /dev/null 2>&1
 if [[ $? != 0 ]]; then
-  alias node="nodejs"
+  ln -sf $(which nodejs) /usr/local/bin/node
 fi
