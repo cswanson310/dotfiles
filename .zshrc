@@ -121,6 +121,7 @@ alias scons-ent="scons $common_scons_flags $scons_compiler_flags $SSL_FLAGS --ss
 alias scons-fast-pre-32="scons $common_scons_flags --cc=$(which clang) --cxx=$(which clang++)"
 alias scons-asan="scons-fast --config=force --dbg=on --opt=off --allocator=system --sanitize=address --llvm-symbolizer=$(which llvm-symbolizer)"
 alias scons-asan-pre-32="scons-fast-pre-32 --config=force --dbg=on --opt=off --allocator=system --sanitize=address --llvm-symbolizer=$(which llvm-symbolizer)"
+alias M="cd ~/github/mongo"
 
 alias fm="ps -ef | grep mongo"
 alias fmd="ps -ef | grep mongod"
