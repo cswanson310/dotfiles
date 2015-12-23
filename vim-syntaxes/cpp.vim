@@ -3,7 +3,7 @@ syn match   cCustomClass      "\zs\w\+\ze::"
 syn match   cCustomFuncOrType "::\zs\w\+\ze("
 syn match   cppType           "\(const \)\?\zs[A-Za-z][A-Za-z<>_:]\+\ze\*\?&\? &\?[_A-Za-z]\+" nextgroup=cVariableName contains=cVariableName
 syn match   cMemberVariable   "[([ >+*!&]\zs_[a-z][A-Za-z]*\ze"
-syn match   cMacro            "\zs[A-Z_]\{2,}\ze[^A-Za-z]"
+syn match   cMacro            "^[a-z]\zs[A-Z_]\{2,}\ze[^A-Za-z]"
 
 hi def link cCustomClass      Structure
 hi def link cCustomFuncOrType Function
